@@ -1,11 +1,30 @@
-# Neurosift blog
+<!-- Note: the heading "neurosift-blog" gets included in the rendered view, so it is not necessary to include it in the markdown file. -->
+
+[Rendered view](https://magland.github.io/neurosift-blog)
+
+Links
+* [Live site](https://neurosift.app)
+* [Neurosift source code](https://github.com/flatironinstitute/neurosift)
+* [Source for this document](https://github.com/magland/neurosift-blog)
 
 ## AI assistant developments
 
 2024-10-10
 
-...
+There is now a chat assistant side panel on the main DANDI exploration page. You can ask about DANDI, Neurosift, or how to search for data. It also has the ability to do a lexical search on its own, so you can ask it for data on a specific topic and it will return relevant Dandisets.
 
+A more interesting new assistant is on the Dandiset page. As an agent, it can autonomously retrieve the following information:
+* Metadata about the Dandiset (description, contributors, number of files, etc)
+* A list of the NWB files in the Dandiset
+* Details about a specific NWB files (efficient loading via LINDI).
+
+So for example you can ask it "What are the Neurodata types in this Dandiset?" and it will do the necessary research. For example, try it out for [Dandiset 000472](https://neurosift.app/?p=/dandiset&dandisetId=000472&dandisetVersion=draft). You can even follow up with questions about the neurodata objects, as shown in the screenshot.
+
+![image](https://github.com/user-attachments/assets/9f65a2be-36aa-4441-8d83-61b07e35c2e8)
+
+**Next steps**: The next step is to develop the assistant for the single NWB file view. It should be aware of the data objects, available visualizations, and available Dendro analyses. It should also be able to generate Python code for loading the data objects, and creating basic figures using matplotlib. Ultimately, with Dendro integration, it should be able semi-automatically create create and execute analysis pipelines.
+
+**Future**: Ultimately, we would like to be able to ask the assistant high level questions, and have it do research across all public datasets on DANDI.
 
 ## LINDI, Neurosift and Dendro: INCF workshop
 
