@@ -7,6 +7,42 @@ Links
 * [Neurosift source code](https://github.com/flatironinstitute/neurosift)
 * [Source for this document](https://github.com/magland/neurosift-blog)
 
+## AI-Driven Exploration of NWB Files: A Hands-on Experience with Dandiset 001037
+
+2024-10-11
+
+The last post focused on the Neurosift AI assistant in the context of Dandisets and DANDI as a whole. Today I extended the functionality of Neurosift's AI assistant to provide a more hands-on experience for *individual NWB files* within a Dandiset, especially for generating Python code for exploration and analysis, leveraging metadata from both the NWB file, the surrounding Dandiset, and external resources.
+
+**Experimenting with 001037**
+
+I started by experimenting with [Dandiset 001037](https://dandiarchive.org/dandiset/001037/0.240816.1841), aiming to reproduce a figure from the associated paper, "[Causal evidence of a line attractor encoding an affective state](https://www.nature.com/articles/s41586-024-07915-x)". While the assistant could load and explore the structure of the NWB file via pynwb, I quickly realized that it would need to be guided through the process. This ultimately resulted in a [Jupyter notebook](https://github.com/magland/dandiset-notes/blob/main/dandisets/001037/001037.ipynb) that was able to reproduce Figure 1d in the paper. I uploaded it to GithHub.
+
+Then I realized it would be great to provide this specific notebook as a resource for my future interactions with the assistant, as well as for others coming across the same dataset. I used the existing Neurosift’s annotations feature to attach the URL of the notebook to the Dandiset. Then I added functionality to the assistant to detect linked resources and offer to optionally include them in the chat context for each session (for me or others).
+
+Now in my chat (after selecting the notebook resource) I can just write "produce figure 1d for this NWB file" and it writes the code for me in a tidy script. Of course, it's just reproducing what I did in the notebook. However the usefulness became apparent when I tried it with a different NWB file in the same Dandiset. Again, for the second file, I selected the notebook in the assistant's context and prompted it to "produce figure 1d for this NWB file." The assistant analyzed the structure of the new NWB file and adjusted the code accordingly. It tweaked necessary names and parameters and successfully generated code for producing the corresponding figure for the new file.
+
+**Try it out**
+
+1. Go to [Dandiset 001037](https://neurosift.app/?p=/dandiset&dandisetId=001037&dandisetVersion=0.240816.1841).
+2. Open one of the NWB files.
+3. Click the chat icon in the left panel and select the notebook resource.
+4. Ask the assistant to "produce figure 1d for this NWB file."
+5. Copy the generated code and run it in your Python environment.
+6. Repeat the process with another NWB file in the same Dandiset.
+
+![image](https://github.com/user-attachments/assets/ef1c1236-9573-4c5f-bb0e-eda042f43bde)
+
+The figure for the first NWB file (from the paper):
+![image](https://github.com/user-attachments/assets/e761d9ad-fc34-4261-a24c-00bc37b072ae)
+
+
+The figure for the second NWB file (not in the actual paper):
+![image](https://github.com/user-attachments/assets/2ef2898d-cc2c-457d-b197-4e4409f9bd10)
+
+Of course the question is why does the second figure look weird? Could it be a problem with the AI-generated code? Or is something odd with the data? Or is there more context and information needed? These are valuable questions! And questions we never would have known to ask without this type of exploration. The assistant is not a replacement for a human, but it can be a powerful tool for guiding exploration.
+
+**Next Steps**: Try this type of thing with other Dandisets.
+
 ## AI assistant developments
 
 2024-10-10
