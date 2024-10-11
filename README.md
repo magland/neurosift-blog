@@ -39,7 +39,7 @@ The figure for the first NWB file (from the paper):
 The figure for the second NWB file (not in the actual paper):
 ![image](https://github.com/user-attachments/assets/2ef2898d-cc2c-457d-b197-4e4409f9bd10)
 
-Of course the question is why does the second figure look weird? Could it be a problem with the AI-generated code? Or is something odd with the data? Or is there more context and information needed? These are valuable questions! And questions we never would have known to ask without this type of exploration. The assistant is not a replacement for a human, but it can be a powerful tool for guiding exploration.
+**Implications**: Of course the question is why does the second figure look weird? Could it be a problem with the AI-generated code? Or is something odd with the data? Or is there more context and information needed? These are valuable questions! And questions we never would have known to ask without this type of exploration. **The assistant is not a replacement for a human, but it can be a powerful tool for guiding exploration.**
 
 **Next Steps**: Try this type of thing with other Dandisets.
 
