@@ -7,6 +7,64 @@ Links
 * [Neurosift source code](https://github.com/flatironinstitute/neurosift)
 * [Source for this document](https://github.com/magland/neurosift-blog)
 
+## Pynapple 2D tuning curves
+
+2024-10-14
+
+Expanding on the previous post, I wanted to give the AI agent knowledge about creating 2D tuning curves using Pynapple (this was suggested by Ben). So I adapted [this tutorial notebook](https://pynapple.org/generated/examples/tutorial_pynapple_dandi/) into [this notebook](https://github.com/magland/dandiset-notes/blob/main/dandisets/000582/000582.ipynb) which is meant to be ingested by the AI agent. As described in the previous post, I then added an annotation to Dandiset 000582 on Neurosift to point to this notebook. Now when you open any NWB file from 000582 ([for example this one](https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/834ac48a-9bdf-4e79-a028-cbbf3136b01e/download/&dandisetId=000582&dandisetVersion=draft)), the AI agent will give you the option of including this as a resource inside the context, and you can ask something like: "Plot 2D tuning curves". There was an issue with the number of rows in the figure the first time I tried this, so I had to follow up with "You should take into consideration the number of units when you are generating the plot figure." The agent then adjusted the code accordingly and produced the following script:
+
+```python
+# Import necessary libraries
+import pynwb
+import lindi
+import matplotlib.pyplot as plt
+import pynapple as nap
+import seaborn as sns
+
+# Define the URL for the NWB file
+url = 'https://lindi.neurosift.org/dandi/dandisets/000582/assets/834ac48a-9bdf-4e79-a028-cbbf3136b01e/nwb.lindi.json'
+
+# Load the NWB file
+f = lindi.LindiH5pyFile.from_lindi_file(url)
+io = pynwb.NWBHDF5IO(file=f, mode='r')
+nwbfile = io.read()
+
+# Load the NWB file with Pynapple
+nwbp = nap.NWBFile(nwbfile)
+
+# Access the units and position data
+units = nwbp["units"]  # TsGroup
+position = nwbp["SpatialSeriesLED1"]  # 2D position data
+
+# Compute 2D tuning curves
+tc, binsxy = nap.compute_2d_tuning_curves(units, position, 20)
+
+# Adjust plot size based on the number of units
+num_units = len(units)
+cols = 4
+rows = (num_units + cols - 1) // cols  # Calculate rows needed
+plt.figure(figsize=(15, 4 * rows))
+
+# Styles for plotting
+custom_params = {"axes.spines.right": False, "axes.spines.top": False}
+sns.set_theme(style="ticks", palette="colorblind", font_scale=1.5, rc=custom_params)
+
+# Plot 2D tuning curves
+for i, (unit_id, tc_data) in enumerate(tc.items()):
+    plt.subplot(rows, cols, i + 1)
+    plt.imshow(tc_data, origin="lower", aspect="auto")
+    plt.title(f"Unit {unit_id}")
+plt.tight_layout()
+plt.show()
+
+# Close the file
+io.close()
+```
+
+And upon execution you get a figure like the [one on the Pynapple docs](https://pynapple.org/generated/examples/tutorial_pynapple_dandi/).
+
+Of course there are other Dandisets that could benefit from this resource, and in the future it would be nice if we didn't need to manually attach the notebook annotation to each Dandiset. Instead we would want to include this as a general resource that the agent could access when needed.
+
 ## AI-Driven Exploration of NWB Files: A Hands-on Experience with Dandiset 001037
 
 2024-10-11
