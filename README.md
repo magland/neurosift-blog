@@ -7,6 +7,28 @@ Links
 * [Neurosift source code](https://github.com/flatironinstitute/neurosift)
 * [Source for this document](https://github.com/magland/neurosift-blog)
 
+## Conditional loading of documentation using AI function calls
+
+2024-10-15
+
+The Neurosift AI assistant can conditionally load documentation resources as needed based on the user's prompt. Here's the instructions that the assistant receives at this point.
+
+```text
+The following external resources are available using the "load_external_resource" tool - you should utilize these when appropriate.
+...
+
+* Create 2D tuning curves using Pynapple: https://github.com/magland/dandiset-notes/blob/main/dandisets/000582/000582.ipynb
+* Load data objects from an NWB file using Pynapple: ./pynapple-docs.md
+* Run spike sorting on data from this NWB file: ./spike-sorting-docs.md
+* Iterate through the NWB files in a Dandiset: https://github.com/magland/dandiset-notes/blob/main/howto/dandi/iterate_through_nwb_files_in_dandiset.ipynb
+```
+
+The assistant/agent can call the `load_external_resource` tool to load the resource into the context. Typically [tool calls or function calls](https://platform.openai.com/docs/guides/function-calling) are used to retrieve records from a database or to do a calculation, so I wasn't sure if it would work for loading a document into the context. But based on preliminary testing with the gpt-4o model, it seems to work!
+
+For example, on the [main Neurosift page]() you can open the chat and ask `"how to iterate through NWB files on Dandiset 000888?"`. You'll then see the assistant respond with `"load_external_resource https://github.com/magland/dandiset-notes/blob/main/howto/dandi/iterate_through_nwb_files_in_dandiset.ipynb"`, and then respond with the script based on what it learned from the content of the notebook.
+
+From my preliminary experiments, other LLM models don't do as well with this type of thing.
+
 ## Pynapple 2D tuning curves
 
 2024-10-14
