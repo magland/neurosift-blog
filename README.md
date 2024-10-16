@@ -7,6 +7,19 @@ Links
 * [Neurosift source code](https://github.com/flatironinstitute/neurosift)
 * [Source for this document](https://github.com/magland/neurosift-blog)
 
+## Speedups in time series rendering
+
+2024-10-16
+
+Today, I made improvements to how time series data is rendered in Neurosift. Previously, users had to zoom in before they could see the data clearly. While this approach saved computational resources, it wasn't the most user-friendly experience. The new changes introduce an adaptive downsampling technique that samples minimum and maximum values based on the zoom level and the width of the window. This change allows the data to load at a wider range of zoom levels, improving the experience for users who found it annoying to have to zoom in initially.
+
+The downsampling occurs entirely on the client side, so while the rendering performance has been improved, the same amount of data is downloaded to the browser as before. Optimizing the amount of data transferred is a more complex problem that involves preparing multiscale downsampled data ahead of time, which I’m actively working on. However, that will take more time to implement.
+
+These enhancements should make the initial data viewing smoother and faster, especially for those working with [large time series datasets](https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/c04f6b30-82bf-40e1-9210-34f0bcd8be24/download/&dandisetId=000409&dandisetVersion=draft&tab=neurodata-item:/acquisition/ElectricalSeriesAp|ElectricalSeries&tab-time=826.6977926933519,830.893730912819,826.502088310861).
+
+![image](https://github.com/user-attachments/assets/2e1adb5a-10f3-4a9c-9949-6c502f038d1c)
+
+
 ## Conditional loading of documentation using AI function calls
 
 2024-10-15
