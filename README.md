@@ -36,7 +36,8 @@ Today, I made improvements to how time series data are rendered in Neurosift. Pr
 
 The downsampling occurs entirely on the client side, so while the rendering performance has been improved, the same amount of data is downloaded to the browser as before. Optimizing the amount of data transferred is a more complex problem that involves preparing multiscale downsampled data ahead of time, which I’m actively working on. However, that will take more time to implement.
 
-These enhancements should make the initial data viewing smoother and faster, especially for those working with [large time series datasets](https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/c04f6b30-82bf-40e1-9210-34f0bcd8be24/download/&dandisetId=000409&dandisetVersion=draft&tab=neurodata-item:/acquisition/ElectricalSeriesAp|ElectricalSeries&tab-time=826.6977926933519,830.893730912819,826.502088310861).
+These enhancements should make the initial data viewing smoother and faster, especially for those working with
+<a href="https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/c04f6b30-82bf-40e1-9210-34f0bcd8be24/download/&dandisetId=000409&dandisetVersion=draft&tab=neurodata-item:/acquisition/ElectricalSeriesAp|ElectricalSeries&tab-time=826.6977926933519,830.893730912819,826.502088310861">large time series datasets</a>.
 
 ![image](https://github.com/user-attachments/assets/2e1adb5a-10f3-4a9c-9949-6c502f038d1c)
 
