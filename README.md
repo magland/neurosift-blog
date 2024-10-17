@@ -7,11 +7,32 @@ Links
 * [Neurosift source code](https://github.com/flatironinstitute/neurosift)
 * [Source for this document](https://github.com/magland/neurosift-blog)
 
+## Multiscale Spike Density and Rastermap Integration
+
+2024-10-17
+
+Today Ben pointed me to a new paper in Nature Neuroscience and suggested I make the technique available in Neurosift/Dendro. [Rastermap](https://www.nature.com/articles/s41593-024-01783-4) is a method for visualizing large-scale neural recordings by sorting neurons based on their activity patterns. To build this into Neurosift, I added two new Dendro-enabled features.
+
+**Multiscale Spike Density Plot**. The first new Dendro processor I implemented is a multiscale spike density plot. This plot downscales the spike train data (in a NWB units table) at multiple temporal resolutions, allowing users to zoom all the way out and still have the interface be responsive. By preparing the multiscale spike density array via a Dendro job, Neurosift now handles large spike train datasets much more efficiently. [Here's the source code](https://github.com/magland/dendro/blob/main/apps/hello_neurosift/MultiscaleSpikeDensity.py).
+
+**Rastermap Integration**. The second feature is the integration of the Rastermap method. I added a new Dendro processor that computes the Rastermap ordering of the units, allowing for a more structured view of neural activity. Once the job is complete, Neurosift users can click a checkbox to display the spike density map using this Rastermap ordering, providing a refined visualization of unit activity based on their temporal relationships. [Here's the source code](https://github.com/magland/dendro/blob/main/apps/hello_rastermap/Rastermap.py)
+
+I tried this out on a random Neuropixels example on Dandiset 000409 (IBL - Brain Wide Map). Go to [this random example](https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/ab3998c2-3540-4bda-8b03-3f3795fa602d/download/&dandisetId=000409&dandisetVersion=draft&tab=view:SpikeDensityPlot|/units&tab-time=1270.6243529286096,1304.7577449409032,1281.0263022580411), wait for the spike density map to load, and then click the "Use rastermap order" checkbox.
+
+Here are screenshots without (top) and with (bottom) the rastermap order:
+
+![image](https://github.com/user-attachments/assets/308f8b1f-680d-47d2-bc21-906ae751c0e4)
+
+![image](https://github.com/user-attachments/assets/c0283d8e-4a22-41a0-bc66-fb2be579384e)
+
+This can now be applied to any DANDI NWB file with a units table. You just need a Dendro API key with permission to run the new processors.
+
+
 ## Speedups in time series rendering
 
 2024-10-16
 
-Today, I made improvements to how time series data is rendered in Neurosift. Previously, users had to zoom in before they could see the data clearly. While this approach saved computational resources, it wasn't the most user-friendly experience. The new changes introduce an adaptive downsampling technique that samples minimum and maximum values based on the zoom level and the width of the window. This change allows the data to load at a wider range of zoom levels, improving the experience for users who found it annoying to have to zoom in initially.
+Today, I made improvements to how time series data are rendered in Neurosift. Previously, users had to zoom in before they could see the data clearly. While this approach saved computational resources, it wasn't the most user-friendly experience. The new changes introduce an adaptive downsampling technique that samples minimum and maximum values based on the zoom level and the width of the window. This change allows the data to load at a wider range of zoom levels, improving the experience for users who found it annoying to have to zoom in initially.
 
 The downsampling occurs entirely on the client side, so while the rendering performance has been improved, the same amount of data is downloaded to the browser as before. Optimizing the amount of data transferred is a more complex problem that involves preparing multiscale downsampled data ahead of time, which I’m actively working on. However, that will take more time to implement.
 
