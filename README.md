@@ -6,6 +6,8 @@ Links
 * [Live site](https://neurosift.app)
 * [Neurosift source code](https://github.com/flatironinstitute/neurosift)
 * [Source for this document](https://github.com/magland/neurosift-blog)
+* [Issues and feature requests](https://github.com/flatironinstitute/neurosift/issues)
+* [Discussion](https://github.com/flatironinstitute/neurosift/discussions)
 
 ## AI generated Dandiset summaries and semantic search
 
