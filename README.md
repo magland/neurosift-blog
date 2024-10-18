@@ -13,7 +13,7 @@ Links
 
 2024-10-18
 
-Neurosift now lets you preview TwoPhotonSeries data as videos, making it easier to assess data quality, detect motion artifacts, corruption, or simply explore the dataset. Since TwoPhotonSeries arrays in NWB files are often large and not optimized for streaming, loading can be slow. However, with the new Dendro-enabled view, you can quickly preview up to a minute of video to get an overview.
+Neurosift now lets you preview TwoPhotonSeries data as videos, making it easier to assess data quality, detect motion artifacts, corruption, or simply explore the dataset. Since TwoPhotonSeries arrays in NWB files are often large and not optimized for streaming, loading can be slow. But with this Dendro-enabled view, you can quickly preview a section of video to get an overview.
 
 **How it works:**
 
