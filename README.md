@@ -9,6 +9,21 @@ Links
 * [Issues and feature requests](https://github.com/flatironinstitute/neurosift/issues)
 * [Discussion](https://github.com/flatironinstitute/neurosift/discussions)
 
+## Preview TwoPhotonSeries as Videos
+
+2024-10-18
+
+Neurosift now lets you preview TwoPhotonSeries data as videos, making it easier to assess data quality, detect motion artifacts, corruption, or simply explore the dataset. Since TwoPhotonSeries arrays in NWB files are often large and not optimized for streaming, loading can be slow. However, with the new Dendro-enabled view, you can quickly preview up to a minute of video to get an overview.
+
+**How it works:**
+
+When you open a TwoPhotonSeries object, you'll see a "Movie" tab where you can watch the video preview. If the Dendro job has already run, the video loads immediately. Otherwise, you can submit a new job, provided you have the necessary API key. The default preview duration is one minute, but you can adjust it for longer previews, though this will take more time to process.
+
+<a href="https://neurosift.app/?p=/nwb&url=https://api.dandiarchive.org/api/assets/89256db6-8926-451f-b51f-8a7ae7c3c1f8/download/&dandisetId=000871&dandisetVersion=draft&tab=neurodata-item:/acquisition/raw_suite2p_motion_corrected|TwoPhotonSeries">Here’s an example from Dandiset 000871</a> (click the Movie tab).
+
+![image](https://github.com/user-attachments/assets/5a6bca26-c8f6-430e-83d0-ddcc3d452239)
+
+
 ## AI generated Dandiset summaries and semantic search
 
 2024-10-18
@@ -23,7 +38,7 @@ Neurosift has a feature where you can do a semantic search for relevant Dandiset
 
 2024-10-17
 
-Today Ben pointed me to a new paper in Nature Neuroscience and suggested I make the technique available in Neurosift/Dendro. [Rastermap](https://www.nature.com/articles/s41593-024-01783-4) is a method for visualizing large-scale neural recordings by sorting neurons based on their activity patterns. To build this into Neurosift, I added two new Dendro-enabled features.
+Today, I came across a new paper in Nature Neuroscience that presents an exciting technique, which I decided to incorporate into Neurosift/Dendro (thanks Ben). [Rastermap](https://www.nature.com/articles/s41593-024-01783-4) is a method for visualizing large-scale neural recordings by sorting neurons based on their activity patterns. To build this into Neurosift, I added two new Dendro-enabled features.
 
 **Multiscale Spike Density Plot**. The first new Dendro processor I implemented is a multiscale spike density plot. This plot downscales the spike train data (in a NWB units table) at multiple temporal resolutions, allowing users to zoom all the way out and still have the interface be responsive. By preparing the multiscale spike density array via a Dendro job, Neurosift now handles large spike train datasets much more efficiently. [Here's the source code](https://github.com/magland/dendro/blob/main/apps/hello_neurosift/MultiscaleSpikeDensity.py).
 
