@@ -9,6 +9,26 @@ Links
 * [Issues and feature requests](https://github.com/flatironinstitute/neurosift/issues)
 * [Discussion](https://github.com/flatironinstitute/neurosift/discussions)
 
+
+## Support for iEEG Data in EDF Files on OpenNeuro
+
+2024-10-22
+
+Neurosift now lets you visualize iEEG data stored in EDF files, commonly found on [OpenNeuro](https://openneuro.org/). European Data Format (EDF) is a standard format for storing biological timeseries data such EEG.
+
+Try it out:
+
+* Visit an example dataset [like this one](https://openneuro.org/datasets/ds005523/versions/1.0.1).
+* Navigate to a session folder, go to the ieeg folder, and right-click the download button for an .edf file to copy the download URL.
+* Paste the URL into this link format: https://neurosift.app?p=/edf&url=... (replace the ... with the copied URL to visualize the data)
+
+[Here's an example](https://neurosift.app/?p=/edf&url=https://s3.amazonaws.com/openneuro.org/ds005523/sub-R1050M/ses-0/ieeg/sub-R1050M_ses-0_task-YC2_acq-bipolar_ieeg.edf?versionId=SlrVkMtqnxo5b0gAPoZksdriQXgYdKQm).
+
+The plan is to integrate Neurosift directly into OpenNeuro for easier access.
+
+![image](https://github.com/user-attachments/assets/31574391-8d69-4a72-8709-e98ed2eb5f37)
+
+
 ## Preview TwoPhotonSeries as Videos
 
 2024-10-18
