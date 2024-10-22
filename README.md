@@ -33,7 +33,7 @@ The plan is to integrate Neurosift directly into OpenNeuro for easier access.
 
 2024-10-18
 
-Neurosift now lets you preview TwoPhotonSeries data as videos, making it easier to assess data quality, detect motion artifacts, corruption, or simply explore the dataset. Since TwoPhotonSeries arrays in NWB files are often large and not optimized for streaming, loading can be slow. However, with the new Dendro-enabled view, you can quickly preview up to a minute of video to get an overview.
+Neurosift now lets you preview TwoPhotonSeries data as videos, making it easier to assess data quality, detect motion artifacts, corruption, or simply explore the dataset. Since TwoPhotonSeries arrays in NWB files are often large and not optimized for streaming, loading can be slow. But with this Dendro-enabled view, you can quickly preview a section of video to get an overview.
 
 **How it works:**
 
@@ -72,7 +72,7 @@ Here are screenshots without (top) and with (bottom) the rastermap order:
 
 ![image](https://github.com/user-attachments/assets/c0283d8e-4a22-41a0-bc66-fb2be579384e)
 
-This can now be applied to any DANDI NWB file with a units table. You just need a Dendro API key with permission to run the new processors.
+This can now be applied to any DANDI NWB file with a units table. You just need a Dendro API key with permission to run jobs.
 
 
 ## Speedups in time series rendering
