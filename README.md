@@ -26,7 +26,9 @@ Try it out:
 
 The plan is to integrate Neurosift directly into OpenNeuro for easier access.
 
-![image](https://github.com/user-attachments/assets/31574391-8d69-4a72-8709-e98ed2eb5f37)
+![image](https://github.com/user-attachments/assets/46219942-b39f-4d19-bf53-fac0024d9a76)
+
+Update 10/23/2024: There is now a left panel where you can view the channel labels and sampling frequencies and select/deselect channels for viewing.
 
 
 ## Preview TwoPhotonSeries as Videos
