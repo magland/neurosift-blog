@@ -9,6 +9,20 @@ Links
 * [Issues and feature requests](https://github.com/flatironinstitute/neurosift/issues)
 * [Discussion](https://github.com/flatironinstitute/neurosift/discussions)
 
+## Experimental AI Agent for Finding Relevant Datasets on DANDI
+
+2024-10-25
+
+Today, I implemented an experimental AI agent capable of locating and describing relevant datasets on DANDI. This agent **collaborates with "helper assistants"** designed specifically to retrieve precise information without cluttering the main chat context. Here’s how it works:
+
+To start, the main agent runs a semantic search, comparing an embedding of the user's query with a database of precomputed embeddings for public Dandisets (as described below). Once it finds relevant datasets, it consults a helper assistant for more detail. The helper assistant directly accesses the DANDI API and extracts the necessary metadata—like authors, dataset size, asset counts, or experimental details—then condenses this information into a concise summary. This keeps the main conversation streamlined, even when multiple Dandisets are being summarized. Importantly, the potentially lengthy response from the DANDI API doesn't directly get included in the context.
+
+Below is a screenshot of an example session. In it, I asked the agent to “describe some dandisets that involve ultrasound stimulation.” The left panel shows sub-discussions with the helper assistants, and in the main window, we see a clean, summarized response.
+
+This is still in the early stages, so there’s no public link yet. If interested, reach out for access.
+
+![image](https://github.com/user-attachments/assets/19c8b826-9a74-4097-b64c-1e1687004cef)
+
 
 ## Support for iEEG Data in EDF Files on OpenNeuro
 
