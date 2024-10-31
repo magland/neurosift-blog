@@ -17,6 +17,8 @@ I have made a preliminary version of the Neurosift AI agent [available for publi
 
 It has the ability to probe the DANDI Archive in a variety of ways. Lexical search, semantic search, search for neurodata types, search for column names in Units tables, the data structure of individual NWB files, and more. It also has the ability to respond with inline interactive plots (although for now this is limited to timeseries alignment plots).
 
+I doesn't yet know how to write Python code for loading/processing data, but that's coming next.
+
 Feel free to [try it out](https://neurosift.app/?p=/chat)!
 
 Or check out [some example saved chats](https://neurosift.app/?p=/saved-chats).
