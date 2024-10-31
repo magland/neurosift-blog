@@ -49,7 +49,7 @@ Try it out:
 
 [Here's an example](https://neurosift.app/?p=/edf&url=https://s3.amazonaws.com/openneuro.org/ds005523/sub-R1050M/ses-0/ieeg/sub-R1050M_ses-0_task-YC2_acq-bipolar_ieeg.edf?versionId=SlrVkMtqnxo5b0gAPoZksdriQXgYdKQm).
 
-The plan is to integrate Neurosift directly into OpenNeuro for easier access.
+The hope is to integrate Neurosift directly into OpenNeuro for easier access.
 
 ![image](https://github.com/user-attachments/assets/46219942-b39f-4d19-bf53-fac0024d9a76)
 
