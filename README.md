@@ -9,6 +9,18 @@ Links
 * [Issues and feature requests](https://github.com/flatironinstitute/neurosift/issues)
 * [Discussion](https://github.com/flatironinstitute/neurosift/discussions)
 
+## Embedded plots in the chat window
+
+2024-11-06
+
+That chat agent now has the ability to generate inline plots using either Matplotlib or Plotly. The agent creates Python code to generate the plot, the user inspects it and gives permission to run using their Jupyter kernel, and then the resulting plot is included as a PNG image (in the case of matplotlib) or as an interactive plot (in the case of Plotly).
+
+For example:
+
+![image](https://github.com/user-attachments/assets/b92e6241-0afc-4bec-8ceb-77ebcbcf1452)
+
+These chats can also be saved, and the data for the embedded plots are saved as well.
+
 ## Running Python Code Directly From the Chat Window
 
 2024-11-01
@@ -23,11 +35,9 @@ and make sure it is running on port 8888.
 
 Then open a chat window and ask something like **"Create a plot for a random NWB file in a random Dandiset"**. The agent will generate the code for you, and you can click the play button above the code snippet to run it in your local jupyter lab environment. You should see the output on the right side of the chat window. Of course it's possible that the code has bugs, in which case you will see the error messages. It is also possible that the AI chose something that will take a very long time. You can use the stop button in the right panel to halt the execution.
 
-[Here's an example chat that plots some LFP traces](https://neurosift.app/?p=/chat&chatId=nc-gn4ls97Gyo4DzO).
+Here's an example chat that plots some LFP traces:
 
 ![image](https://github.com/user-attachments/assets/a9a7ae5f-d769-4c09-9f71-a349cf527ed0)
-
-
 
 
 ## Neurosift AI agent
