@@ -13,7 +13,7 @@ Links
 
 2024-11-06
 
-That chat agent now has the ability to generate inline plots using either Matplotlib or Plotly. The agent creates Python code to generate the plot, the user inspects it and gives permission to run using their Jupyter kernel, and then the resulting plot is included as a PNG image (in the case of matplotlib) or as an interactive plot (in the case of Plotly).
+The chat agent now has the ability to generate inline plots using either Matplotlib or Plotly. The agent creates Python code to generate the plot, the user inspects it and gives permission to run using their Jupyter kernel, and then the resulting plot is included as a PNG image (in the case of matplotlib) or as an interactive plot (in the case of Plotly).
 
 For example:
 
