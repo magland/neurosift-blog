@@ -9,6 +9,28 @@ Links
 * [Issues and feature requests](https://github.com/flatironinstitute/neurosift/issues)
 * [Discussion](https://github.com/flatironinstitute/neurosift/discussions)
 
+## Using remote Jupyter kernels for Neurosift's chat agent
+
+2024-11-08
+
+In my last post, I introduced the ability for Neurosift's AI chat agent to execute scripts using a local Jupyter kernel. This feature works by connecting to a local server configured to accept connections from the Neurosift website, sending code for execution, and receiving output via WebSocket. While convenient, this setup is limited to local resources. For remote setups, like a DANDIHub instance, additional challenges arise, including CORS configuration and JupyterHub authentication.
+
+To address these challenges, I've implemented the neurosift-jp Jupyter extension. This extension integrates the Neurosift chat agent directly into the JupyterLab interface, enabling it to use a remote Python kernel running on JupyterHub servers. For example, you can now harness DandiHub resources for script execution by the chat agent.
+
+How to Get Started:
+
+* **Install the Extension**. Use the JupyterLab extension manager (accessible from the left-hand panel) to install the latest version of neurosift-jp. Then reload the page.
+
+* **Launch a Python Kernel**. Start a new Python kernel by opening a new notebook in JupyterLab.
+
+* **Open the Neurosift Chat**. Press Ctrl+Shift+C to open the command palette (or View -> Activate Command Palette). Select "Open Neurosift Chat" from the available commands.
+
+* **Interact with the AI**. A new chat window will open, allowing you to interact with the AI agent. Any scripts executed by the agent will utilize the remote kernel, giving you access to the computational resources of your JupyterHub environment. You could try "make a test plot and plot it inline".
+
+
+![image](https://github.com/user-attachments/assets/7b3bebc9-9799-4c9c-a221-c8e2c6be5ab2)
+
+
 ## Embedded plots in the chat window
 
 2024-11-06
