@@ -21,11 +21,11 @@ How to Get Started:
 
 * **Install the Extension**. Use the JupyterLab extension manager (accessible from the left-hand panel) to install the latest version of neurosift-jp. Then reload the page.
 
-* **Launch a Python Kernel**. Start a new Python kernel by opening a new notebook in JupyterLab.
-
-* **Open the Neurosift Chat**. Press Ctrl+Shift+C to open the command palette (or View -> Activate Command Palette). Select "Open Neurosift Chat" from the available commands.
+* **Create a .nschat file**. Creat a new file with a .nschat extension, and open it.
 
 * **Interact with the AI**. A new chat window will open, allowing you to interact with the AI agent. Any scripts executed by the agent will utilize the remote kernel, giving you access to the computational resources of your JupyterHub environment. You could try "make a test plot and plot it inline".
+
+* **Save the Chat**. You can save the chat file just like any other document in JupyterLab.
 
 
 ![image](https://github.com/user-attachments/assets/7b3bebc9-9799-4c9c-a221-c8e2c6be5ab2)
