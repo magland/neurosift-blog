@@ -9,6 +9,14 @@ Links
 * [Issues and feature requests](https://github.com/flatironinstitute/neurosift/issues)
 * [Discussion](https://github.com/flatironinstitute/neurosift/discussions)
 
+## Interactive views in the chat window
+
+2024-11-12
+
+The chat agent now has the capability of including interactive views embedded in the output. Right now this is only implemented for RasterPlot for a Units table and an interactive view of TimeIntervals objects. Here is an example:
+
+![image](https://github.com/user-attachments/assets/9a615f07-dd25-4e7e-97b5-77bd0bc0d064)
+
 ## Using remote Jupyter kernels for Neurosift's chat agent
 
 2024-11-08
