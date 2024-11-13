@@ -9,6 +9,19 @@ Links
 * [Issues and feature requests](https://github.com/flatironinstitute/neurosift/issues)
 * [Discussion](https://github.com/flatironinstitute/neurosift/discussions)
 
+## OpenNeuro integration for viewing EDF files
+
+2024-11-13
+
+Neurosift views of EDF files are now integrated into OpenNeuro.
+
+To try it out, go to [this dataset](https://openneuro.org/datasets/ds005592/versions/1.0.0) and find a file with an .edf extension from an ieeg folder. Click on the view button to open the detailed file view. The Neurosift view is embedded in an iframe. [See this discussion](https://github.com/OpenNeuroOrg/openneuro/pull/3187#issuecomment-2463224025) and [this previous post](#support-for-ieeg-data-in-edf-files-on-openneuro).
+
+![image](https://github.com/user-attachments/assets/eaee8856-aca4-4d65-970b-0fa7118525c2)
+
+![image](https://github.com/user-attachments/assets/db7d945e-47a3-4c58-9a6b-ee6ff0a02fbb)
+
+
 ## Jupyterlab extension for viewing Neurosift figures
 
 2024-11-13
