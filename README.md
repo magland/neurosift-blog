@@ -9,6 +9,36 @@ Links
 * [Issues and feature requests](https://github.com/flatironinstitute/neurosift/issues)
 * [Discussion](https://github.com/flatironinstitute/neurosift/discussions)
 
+## Jupyterlab extension for viewing Neurosift figures
+
+2024-11-13
+
+The neurosift_jp jupyterlab extension now allows you to view Neurosift figures directly in Jupyterlab.
+
+```bash
+pip install --upgrade neurosift_jp
+```
+
+Here's an example usage:
+
+```python
+from neurosift_jp.widgets import NeurosiftFigure
+
+f = NeurosiftFigure(
+    nwb_url='https://api.dandiarchive.org/api/assets/11c8af45-e9ad-4305-9737-12a490328e49/download/',
+    item_path='/acquisition/treadmill_velocity'
+)
+
+display(f)
+```
+
+![image](https://github.com/user-attachments/assets/903b29bd-628e-4790-b4f7-12788b548168)
+
+
+In the future, this can be more tightly integrated with other tools such as pynwb.
+
+Next step is to teach the AI agent how to generate these figures.
+
 ## Interactive views in the chat window
 
 2024-11-12
