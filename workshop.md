@@ -1,14 +1,14 @@
 # Free Hands-On Neurosift Workshop
 
-Learn to use Neurosift for processing and visualizing neurophysiology data in the cloud and request new features. Bring your own data or explore public repositories like DANDI and OpenNeuro.
+Learn to use Neurosift for processing and visualizing neurophysiology data in the cloud and share your ideas for future features. Bring your own data or explore public repositories like DANDI and OpenNeuro.
 
 Work directly with the developers in this hands-on session to:
 
-* Process and explore your data.
-* Visualize and analyze datasets.
+* Process and explore public datasets.
+* Visualize and analyze your own data.
 * Share ideas for new features.
 
-📅 When: Thursday, November 21st, 11am ET
+📅 When: Thursday, November 21st, 11am-12pm ET
 
 🌐 Where: Online (link provided upon registration)
 
