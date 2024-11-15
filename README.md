@@ -8,6 +8,7 @@ Links
 * [Source for this document](https://github.com/magland/neurosift-blog)
 * [Issues and feature requests](https://github.com/flatironinstitute/neurosift/issues)
 * [Discussion](https://github.com/flatironinstitute/neurosift/discussions)
+* [Register for the online workshop](https://magland.github.io/neurosift-blog/workshop)
 
 ## OpenNeuro integration for viewing EDF files
 
