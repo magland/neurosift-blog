@@ -14,6 +14,8 @@ Work directly with the developers in this hands-on session to:
 
 Open to all skill levels. Register now!
 
+> Note: If you can't make this time, fill out the form anyway to express your interest.
+
 [Register here](https://forms.gle/DjQRE1aZCPFEGjAG8)
 
 ---
