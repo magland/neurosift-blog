@@ -15,3 +15,6 @@ Work directly with the developers in this hands-on session to:
 Open to all skill levels. Register now!
 
 [Register here](https://forms.gle/DjQRE1aZCPFEGjAG8)
+
+---
+[neurosift.app](https://neurosift.app) | [Neurosift blog](https://magland.github.io/neurosift-blog)
