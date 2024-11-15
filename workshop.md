@@ -14,4 +14,4 @@ Work directly with the developers in this hands-on session to:
 
 Open to all skill levels. Register now!
 
-[Register](https://neurosift.com/workshop)
+[Register here](https://forms.gle/DjQRE1aZCPFEGjAG8)
