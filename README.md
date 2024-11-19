@@ -10,7 +10,7 @@ Links
 * [Discussion](https://github.com/flatironinstitute/neurosift/discussions)
 * [Register for the online workshop](https://magland.github.io/neurosift-blog/workshop)
 
-## Automatic preprocessing for Neurosift visualizations using Dendro
+## Dendro processing for Neurosift visualizations
 
 2024-11-19
 
