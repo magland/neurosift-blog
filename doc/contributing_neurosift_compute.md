@@ -49,3 +49,5 @@ CONTAINER_METHOD=apptainer dendro start-compute-client
 You can either use docker or apptainer as the container method. If you use apptainer, you will need to have apptainer installed. If you use docker, you will need to have docker installed and running.
 
 You should see a link to configure your compute client. Click the link and specify the resources you want to allocate to the compute client.
+
+Finally stop the compute client (Ctrl+C) and restart it to apply the changes.
