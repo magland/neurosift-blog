@@ -10,6 +10,46 @@ Links
 * [Discussion](https://github.com/flatironinstitute/neurosift/discussions)
 * [Register for the online workshop](https://magland.github.io/neurosift-blog/workshop)
 
+## Automatic preprocessing for Neurosift visualizations using Dendro
+
+2024-11-19
+
+Many Neurosift visualizations rely on precomputed data to ensure a smooth, responsive user experience. This preprocessing is handled seamlessly using **Dendro**, which manages and processes containerized jobs to prepare data for visualization.
+
+**Examples of precomputed data:**
+
+- **Multi-scale spike density matrices for Units tables**: 
+  Raster plots become impractical when dealing with a vast number of spikes. Instead, a multi-scale spike count binned array is computed, enabling a responsive zoomable UI for viewing spiking activity.
+
+- **Rastermap**: 
+  As described in [an earlier post](#multiscale-spike-density-and-rastermap-integration), this algorithm computes an optimized ordering of units for spike density plots.
+
+- **Preview mp4 movies**: 
+  For **OnePhotonSeries**, **TwoPhotonSeries**, and **ImageSeries** neurodata objects, the first 60 seconds of data are preprocessed into an mp4 video for efficient previewing.
+
+- **Ephys summaries**: 
+  For raw electrophysiology data, summaries include estimated firing rates by channel and power spectrum visualizations.
+
+**How it works**
+
+1. **Queue Jobs**: A batch script runs daily, identifying new jobs needed for public Dandisets on the DANDI Archive. These jobs are added to the **Dendro job database** as pending tasks.
+2. **Process Jobs**: Compute clients running on various machines (e.g., the Neurosift workstation and soon compute resources at MIT) retrieve jobs, execute them in containers, and update their statuses in the database.
+3. **Upload Results**: Processed results are uploaded by the compute clients to a **Dendro cloud bucket**, where Neurosift can access them for visualization.
+
+You can track the current state of processing and job statuses on the [Neurosift Compute Dashboard](https://neurosift.app/?p=/compute).
+
+![image](https://github.com/user-attachments/assets/900575c0-ec7f-48a2-a1c4-ea891621eae1)
+
+
+**Contributing compute resources**
+
+The system is designed to be open and collaborative, enabling users to contribute their own CPU cycles to Neurosift’s processing. Here's how you can get involved:
+
+1. **Authorization**: Contact the Neurosift team to gain permission to process data for the Dendro-powered Neurosift service.
+2. **Run a Dendro Compute Client**: Install and configure the client on the machine where you'd like to contribute resources. The client will automatically pull jobs, process them in containers (docker or apptainer), and return results to the Dendro system.
+
+By contributing compute power, you can help expand the scalability and responsiveness of Neurosift's tools for the neuroscience community. This approach allows for the easy addition of pluggable compute clients on arbitrary machines and resources, enabling seamless scalability as new computational needs arise.
+
 ## OpenNeuro integration for viewing EDF files
 
 2024-11-13
