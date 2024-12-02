@@ -8,6 +8,10 @@ Links
 * [Issues and feature requests](https://github.com/flatironinstitute/neurosift/issues)
 * [Discussion](https://github.com/flatironinstitute/neurosift/discussions)
 
+## December 2024
+
+* [Interactive neurosift views embedded in a document: Dandiset 000473](./posts/2024-12.md#interactive-neurosift-views-embedded-in-a-document-dandiset-000473)
+
 ## November 2024
 * [Dendro processing for Neurosift visualizations](./posts/2024-11.md#dendro-processing-for-neurosift-visualizations)
 * [OpenNeuro integration for viewing EDF files](./posts/2024-11.md#openneuro-integration-for-viewing-edf-files)
