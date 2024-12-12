@@ -10,6 +10,7 @@ Links
 
 ## December 2024
 
+* [Chat Interface for NWB File Exploration](./posts/2024-12.md#chat-interface-for-nwb-file-exploration)
 * [Interactive neurosift views embedded in a document: Dandiset 000473](./posts/2024-12.md#interactive-neurosift-views-embedded-in-a-document-dandiset-000473)
 
 ## November 2024
